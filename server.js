@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import mysql from 'mysql2';
 import addSchool from './routes/addSchool.js';
+import listSchool from './routes/listSchool.js';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ db.connect((err) => {
 });
 
 app.use('/api/schools', addSchool(db));
+app.use('/api/schools', listSchool(db));
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
