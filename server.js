@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import mysql from 'mysql2';
+import addSchool from './routes/addSchool.js';
 
 dotenv.config();
 
@@ -20,8 +21,9 @@ db.connect((err) => {
     console.log("Connected to MySQL database!");
 });
 
-const PORT = process.env.PORT || 5001;
+app.use('/api/schools', addSchool(db));
 
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
