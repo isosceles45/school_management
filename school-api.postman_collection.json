@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "c8824b46-6d74-417b-9445-2aae3079a6a6",
+		"name": "school-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30514104"
+	},
+	"item": [
+		{
+			"name": "addSchool",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Ocean View Elementary School\",\r\n  \"address\": \"200 Pacific Avenue, Oceanview\",\r\n  \"latitude\": 34.0194,\r\n  \"longitude\": -118.4912\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://school-management-5zf2.onrender.com/api/schools",
+					"protocol": "https",
+					"host": [
+						"school-management-5zf2",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"schools"
+					]
+				}
+			},
+			"response": [
+				{
+					"message": "School added successfully!",
+					"schoolId": 4
+				}
+			]
+		},
+		{
+			"name": "listSchool",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://school-management-5zf2.onrender.com/api/schools?latitude=40.7128&longitude=-74.0060",
+					"protocol": "https",
+					"host": [
+						"school-management-5zf2",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"schools"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "40.7128"
+						},
+						{
+							"key": "longitude",
+							"value": "-74.0060"
+						}
+					]
+				}
+			},
+			"response": [
+				[
+					{
+						"id": 3,
+						"name": "Sunnydale High School",
+						"address": "101 Sunset Blvd, Sunnydale",
+						"latitude": 36.1699,
+						"longitude": -115.14,
+						"distance": 3584.8817909711793
+					},
+					{
+						"id": 2,
+						"name": "Lincoln Elementary School",
+						"address": "456 Oak Avenue, Lincoln",
+						"latitude": 34.0522,
+						"longitude": -118.244,
+						"distance": 3935.771487616013
+					},
+					{
+						"id": 4,
+						"name": "Ocean View Elementary School",
+						"address": "200 Pacific Avenue, Oceanview",
+						"latitude": 34.0194,
+						"longitude": -118.491,
+						"distance": 3958.0355675961855
+					},
+					{
+						"id": 1,
+						"name": "Riverside Middle School",
+						"address": "789 River Road, Riverside",
+						"latitude": 37.7749,
+						"longitude": -122.419,
+						"distance": 4129.053148115392
+					}
+				]
+			]
+		}
+	]
+}
